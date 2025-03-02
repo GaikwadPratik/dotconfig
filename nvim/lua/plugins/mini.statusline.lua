@@ -1,5 +1,8 @@
-return { 
-	'echasnovski/mini.statusline', 
-	version = '*',
-	opts={}
+return {
+	"echasnovski/mini.statusline",
+	version = "*",
+	dependencies={
+		"nvim-tree/nvim-web-devicons"
+	},
+	opts={},
 }

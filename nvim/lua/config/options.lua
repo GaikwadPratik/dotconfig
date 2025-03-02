@@ -76,4 +76,3 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
 vim.keymap.set("n", "<leader>s", "<C-w>s", { noremap = true })
 vim.keymap.set("n", "<leader>v", "<C-w>v", { noremap = true })
 
-

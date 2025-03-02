@@ -24,6 +24,12 @@ return {
 					node_decremental = "<Backspace>",
 				},
 			},
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true,
+				},
+			},
 		})
 	end
 }

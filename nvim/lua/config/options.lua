@@ -10,7 +10,7 @@ vim.cmd("hi SpecialKey ctermfg=237")
 
 -- Detect all Dockerfiles with extensions
 vim.filetype.add({
-    pattern = {["Dockerfile*"] = "dockerfile"},
+	pattern = { ["Dockerfile*"] = "dockerfile" },
 })
 
 -- Set the representation for whitespace
@@ -23,6 +23,7 @@ vim.opt.signcolumn = "yes"
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.statuscolumn = "%s %l %r"
 
 -- Enable mouse in all modes
 vim.opt.mouse = "a"
@@ -75,4 +76,3 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
 -- Leader mappings for opening new splits
 vim.keymap.set("n", "<leader>s", "<C-w>s", { noremap = true })
 vim.keymap.set("n", "<leader>v", "<C-w>v", { noremap = true })
-

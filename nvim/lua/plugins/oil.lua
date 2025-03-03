@@ -1,6 +1,6 @@
 return {
 	"stevearc/oil.nvim",
-	config =function()
+	config = function()
 		require("oil").setup({
 			columns = {
 				"icon",
@@ -10,7 +10,10 @@ return {
 			},
 			-- Set to true to watch the filesystem for changes and reload oil
 			watch_for_changes = false,
-		});
+			view_options = {
+				show_hidden = true,
+			},
+		})
 	end,
 	---@module "oil"
 	---@type oil.SetupOpts,
@@ -18,11 +21,11 @@ return {
 	dependencies = {
 		{
 			"echasnovski/mini.icons",
-			opts = {}
+			opts = {},
 		},
 		{
-			"nvim-tree/nvim-web-devicons"
-		}
+			"nvim-tree/nvim-web-devicons",
+		},
 	},
 	-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
 	-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.

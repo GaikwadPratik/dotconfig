@@ -1,12 +1,6 @@
 -- Set the leader key to the space bar
-vim.g.mapleader = " "
-
 -- Make sure vim knows the background is dark
 vim.opt.background = "dark"
-
--- Set the highlight colors for the listchars
-vim.cmd("hi NonText ctermfg=237")
-vim.cmd("hi SpecialKey ctermfg=237")
 
 -- Detect all Dockerfiles with extensions
 vim.filetype.add({
@@ -76,3 +70,9 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
 -- Leader mappings for opening new splits
 vim.keymap.set("n", "<leader>s", "<C-w>s", { noremap = true })
 vim.keymap.set("n", "<leader>v", "<C-w>v", { noremap = true })
+
+-- Dismiss Noice messages
+vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice notification messages" })
+
+-- 24-bit color for nvim-notify
+vim.opt.termguicolors = true

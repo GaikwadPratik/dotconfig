@@ -28,6 +28,17 @@ vim.opt.cursorline = true
 -- Store undo between session
 vim.opt.undofile = true
 
+-- Minimal number of screen lines to keep above and below the cursor
+vim.opt.scrolloff = 10
+
+--Sync clipboard between OS and neovim
+--Schedule the setting after `UiEnter` because it can increase startup-time
+--Remove this option if you want your OS clipboard to remain independent
+-- see :help `clipboard`
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)
+
 -- Don't show mode since mini-status line is installed
 vim.opt.showmode = false
 

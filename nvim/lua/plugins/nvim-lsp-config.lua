@@ -17,6 +17,17 @@ return {
 				},
 			})
 
+			lspconfig.basedpyright.setup({
+				settings = {
+					basedpyright = {
+						analysis = {
+							typeCheckingMode = "off",
+						},
+					},
+				},
+			})
+			lspconfig.ruff.setup({})
+
 			vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)

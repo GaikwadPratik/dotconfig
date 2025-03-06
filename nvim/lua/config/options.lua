@@ -82,6 +82,11 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
 vim.keymap.set("n", "<leader>s", "<C-w>s", { noremap = true })
 vim.keymap.set("n", "<leader>v", "<C-w>v", { noremap = true })
 
+vim.keymap.set("n", "<C-S-Down>", ":resize +5<CR>", { desc = "Resize Horizontal split down" })
+vim.keymap.set("n", "<C-S-Up>", ":resize -5<CR>", { desc = "Resize Horizontal split up" })
+vim.keymap.set("n", "<C-S-Left>", ":vertical resize -5<CR>", { desc = "Resize Vertical split left" })
+vim.keymap.set("n", "<C-S-Right>", ":vertical resize +5<CR>", { desc = "Resize Vertical split right" })
+
 -- Dismiss Noice messages
 vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice notification messages" })
 

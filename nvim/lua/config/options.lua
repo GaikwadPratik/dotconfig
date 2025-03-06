@@ -87,3 +87,9 @@ vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noi
 
 -- 24-bit color for nvim-notify
 vim.opt.termguicolors = true
+
+-- LSP server to use for python
+-- set to "basedpyright" to use basedpyright instead of pyright
+vim.g.lazyvim_python_lsp = "pyright"
+-- Set to "rust_lsp" to use the old LSP implementation version
+vim.g.lazyvim_python_ruff = "ruff"

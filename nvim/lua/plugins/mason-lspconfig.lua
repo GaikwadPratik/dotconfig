@@ -1,15 +1,15 @@
 return {
 	"williamboman/mason-lspconfig.nvim",
-	config=function()
+	config = function()
 		require("mason-lspconfig").setup({
-			ensure_installed= {
+			ensure_installed = {
 				"rust_analyzer",
 				"gopls",
 				"lua_ls",
 				"ruff",
-				"pyright"
-			}
+				"pyright",
+			},
+			automatic_installation = true,
 		})
-	end
+	end,
 }
-

@@ -1,15 +1,38 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	config = function ()
+	config = function()
 		local configs = require("nvim-treesitter.configs")
 
 		configs.setup({
-			ensure_installed = { "go", "lua", "vim", "vimdoc", "rust", "jq",
-				"json", "javascript", "bash", "cmake", "gomod", "gosum",
-				"gotmpl", "gowork", "dockerfile", "git_config", "gitignore",
-				"make",  "nginx", "passwd", "proto", "python", "regex",
-				"ssh_config", "terraform", "tmux", "yaml"
+			ensure_installed = {
+				"go",
+				"lua",
+				"vim",
+				"vimdoc",
+				"rust",
+				"jq",
+				"json",
+				"javascript",
+				"bash",
+				"cmake",
+				"gomod",
+				"gosum",
+				"gotmpl",
+				"gowork",
+				"dockerfile",
+				"git_config",
+				"gitignore",
+				"make",
+				"nginx",
+				"passwd",
+				"proto",
+				"python",
+				"regex",
+				"ssh_config",
+				"terraform",
+				"tmux",
+				"yaml",
 			},
 			auto_install = true,
 			sync_install = false,
@@ -31,5 +54,5 @@ return {
 				},
 			},
 		})
-	end
+	end,
 }

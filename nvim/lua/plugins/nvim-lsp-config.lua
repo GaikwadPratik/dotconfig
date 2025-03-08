@@ -4,6 +4,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 		local lspconfig = require("lspconfig")
 		lspconfig.lua_ls.setup({
 			settings = {
@@ -16,9 +17,12 @@ return {
 			},
 		})
 
-		lspconfig.gopls.setup({})
+		lspconfig.gopls.setup({
+			capabilities = capabilities,
+		})
 
 		lspconfig.rust_analyzer.setup({
+			capabilities = capabilities,
 			settings = {
 				["rust-analyzer"] = {
 					check = {
@@ -29,6 +33,7 @@ return {
 		})
 
 		lspconfig.basedpyright.setup({
+			capabilities = capabilities,
 			settings = {
 				basedpyright = {
 					analysis = {

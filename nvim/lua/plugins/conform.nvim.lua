@@ -1,5 +1,6 @@
 return {
 	"stevearc/conform.nvim",
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local conform = require("conform")
 		vim.keymap.set("n", "gq", conform.format, { desc = "Invoke conform formatter", noremap = true })

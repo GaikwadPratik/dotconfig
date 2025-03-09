@@ -5,41 +5,12 @@ return {
 	--or if using mini.icons/mini.nvim
 	dependencies = { "echasnovski/mini.icons" },
 	opts = {},
-	keys = {
-		{
-			"<leader>ff",
-			function()
-				require("fzf-lua").files()
-			end,
-			desc = "[F]ind [F]iles in cwd",
-		},
-		{
-			"<leader>fg",
-			function()
-				require("fzf-lua").live_grep()
-			end,
-			desc = "[F]ind by [G]rep in cwd",
-		},
-		{
-			"<leader>fh",
-			function()
-				require("fzf-lua").helptags()
-			end,
-			desc = "[F]ind in [H]rep of NVIM",
-		},
-		{
-			"<leader>fk",
-			function()
-				require("fzf-lua").keymaps()
-			end,
-			desc = "[F]ind in [K]eymaps",
-		},
-		{
-			"<leader>fr",
-			function()
-				require("fzf-lua").resume()
-			end,
-			desc = "[F]ind [R]esume from last search",
-		},
-	},
+	config = function()
+		local fzflua = require("fzf-lua")
+		vim.keymap.set("n", "<leader>ff", fzflua.files, { desc = "[f]ind [f]iles in cwd" })
+		vim.keymap.set("n", "<leader>fg", fzflua.live_grep, { desc = "[f]ind by [g]rep in cwd" })
+		vim.keymap.set("n", "<leader>fh", fzflua.helptags, { desc = "[f]ind in [h]rep of NVIM" })
+		vim.keymap.set("n", "<leader>fk", fzflua.keymaps, { desc = "[f]ind in [k]eymaps" })
+		vim.keymap.set("n", "<leader>fr", fzflua.resume, { desc = "[f]ind [r]esume from last search" })
+	end,
 }

@@ -58,6 +58,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
 
+-- turn off swapfile
+vim.opt.swapfile = false
+
 -- Turn off incremental search
 vim.opt.incsearch = false
 
@@ -92,9 +95,25 @@ vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noi
 
 -- 24-bit color for nvim-notify
 vim.opt.termguicolors = true
+vim.opt.laststatus=2
+
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
+vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
+
+vim.keymap.set("n", "<leader>ccc", "<cmd>%w !pbcopy<CR>", { desc = "[c]opy [c]omplete file to [c]lipboard" })
 
 -- LSP server to use for python
 -- set to "basedpyright" to use basedpyright instead of pyright
-vim.g.lazyvim_python_lsp = "pyright"
--- Set to "rust_lsp" to use the old LSP implementation version
+vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff"
+
+-- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+
+-- local vim = vim
+-- local Plug = vim.fn["plug#"]
+-- vim.call("plug#begin")
+-- -- Plug "vim-airline/vim-airline"
+-- Plug "rust-lang/rust.vim"
+-- vim.call("plug#end")

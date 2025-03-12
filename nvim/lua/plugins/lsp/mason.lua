@@ -1,5 +1,5 @@
 return {
-    "williamboman/mason.nvim",
+	"williamboman/mason.nvim",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 	},
@@ -12,12 +12,12 @@ return {
 
 		mason.setup({
 			ui = {
-			    icons = {
+				icons = {
 					package_installed = "✓",
 					package_pending = "➜",
-					package_uninstalled = "✗"
-				}
-			}
+					package_uninstalled = "✗",
+				},
+			},
 		})
 
 		masonLspConfig.setup({
@@ -28,10 +28,12 @@ return {
 				"lua_ls",
 				"ruff",
 				"basedpyright",
+				"bashls",
+				"dockerls",
 			},
 
 			-- auto-installed configured servers (with lspconfig)
 			automatic_installation = true,
 		})
-	end
+	end,
 }

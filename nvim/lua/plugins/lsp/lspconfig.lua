@@ -3,6 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
+		{ "j-hui/fidget.nvim", opts = {} },
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -127,6 +128,9 @@ return {
 				capabilities = capabilities,
 			}),
 			lspconfig.dockerls.setup({
+				capabilities = capabilities,
+			}),
+			lspconfig.shellcheck.setup({
 				capabilities = capabilities,
 			}),
 		})

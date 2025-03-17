@@ -130,9 +130,6 @@ return {
 			lspconfig.dockerls.setup({
 				capabilities = capabilities,
 			}),
-			lspconfig.shellcheck.setup({
-				capabilities = capabilities,
-			}),
 		})
 	end,
 }

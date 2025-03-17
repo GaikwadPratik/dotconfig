@@ -30,7 +30,6 @@ return {
 				"basedpyright",
 				"bashls",
 				"dockerls",
-				"shellcheck",
 			},
 
 			-- auto-installed configured servers (with lspconfig)

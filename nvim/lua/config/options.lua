@@ -17,7 +17,8 @@ vim.opt.signcolumn = "yes"
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.statuscolumn = "%s %l %r"
+--vim.opt.statuscolumn = "%s %l %r"
+vim.o.statuscolumn = '%s %#LineNr#%{&nu?v:lnum:""}' .. '%=%#@type#%{&rnu?"".v:relnum:""}'
 
 -- Enable mouse in all modes
 vim.opt.mouse = "a"
@@ -95,7 +96,7 @@ vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noi
 
 -- 24-bit color for nvim-notify
 vim.opt.termguicolors = true
-vim.opt.laststatus=2
+vim.opt.laststatus = 2
 
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab

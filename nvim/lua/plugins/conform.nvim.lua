@@ -3,7 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local conform = require("conform")
-		vim.keymap.set("n", "gq", conform.format, { desc = "Invoke conform formatter", noremap = true })
+		vim.keymap.set("n", "<leader>cf", conform.format, { desc = "Invoke [c]onform [f]ormatter", noremap = true })
 		conform.setup({
 			format_on_save = {
 				timeout_ms = 500,

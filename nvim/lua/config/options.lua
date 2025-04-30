@@ -43,6 +43,10 @@ end)
 -- Don't show mode since mini-status line is installed
 vim.opt.showmode = false
 
+-- auto save
+vim.o.autowriteall = true
+vim.cmd([[au InsertLeavePre,FocusLost * if &modifiable | silent! write | endif]])
+
 -- Use short tabs-to-spaces by default
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
@@ -60,7 +64,7 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = true
 
 -- turn off swapfile
-vim.opt.swapfile = false
+-- vim.opt.swapfile = false
 
 -- Turn off incremental search
 vim.opt.incsearch = false

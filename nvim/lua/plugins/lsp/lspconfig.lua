@@ -5,12 +5,6 @@ return {
 		{ "j-hui/fidget.nvim", opts = {} },
 	},
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-
-		-- import mason_lspconfig plugin
-		local mason_lspconfig = require("mason-lspconfig")
-
 		local keymap = vim.keymap
 
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -77,56 +71,55 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		mason_lspconfig.setup_handlers({
-			-- default handler for installed servers
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
-			end,
-			lspconfig.lua_ls.setup({
-				settings = {
-					Lua = {
-						diagnostics = {
-							-- Get the language server to recognize the `vim` global
-							globals = { "vim" },
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = {
+							"vim",
+							"require",
 						},
 					},
 				},
-				capabilities = capabilities,
-			}),
-			lspconfig.gopls.setup({
-				capabilities = capabilities,
-			}),
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-				settings = {
-					["rust-analyzer"] = {
-						check = {
-							command = "clippy",
-						},
-					},
-				},
-			}),
-			lspconfig.basedpyright.setup({
-				capabilities = capabilities,
-				settings = {
-					basedpyright = {
-						analysis = {
-							typeCheckingMode = "off",
-						},
-					},
-				},
-			}),
-			lspconfig.ruff.setup({
-				capabilities = capabilities,
-			}),
-			lspconfig.bashls.setup({
-				capabilities = capabilities,
-			}),
-			lspconfig.dockerls.setup({
-				capabilities = capabilities,
-			}),
+			},
 		})
+
+		vim.lsp.config.gopls = {
+			capabilities = capabilities,
+		}
+
+		vim.lsp.config.rust_analyzer = {
+			capabilities = capabilities,
+			settings = {
+				["rust-analyzer"] = {
+					check = {
+						command = "clippy",
+					},
+				},
+			},
+		}
+
+		vim.lsp.config.basedpyright = {
+			capabilities = capabilities,
+			settings = {
+				basedpyright = {
+					analysis = {
+						typeCheckingMode = "off",
+					},
+				},
+			},
+		}
+
+		vim.lsp.config.ruff = {
+			capabilities = capabilities,
+		}
+
+		vim.lsp.config.bashls = {
+			capabilities = capabilities,
+		}
+
+		vim.lsp.config.dockerls = {
+			capabilities = capabilities,
+		}
 	end,
 }

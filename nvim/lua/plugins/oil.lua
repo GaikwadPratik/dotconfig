@@ -13,6 +13,13 @@ return {
 			view_options = {
 				show_hidden = true,
 			},
+			float = {
+				enable = true,
+				border = "rounded",
+				win_options = {
+					winhighlight = "Normal:OilFloat,FloatBorder:OilFloatBorder",
+				},
+			},
 		})
 	end,
 	---@module "oil"

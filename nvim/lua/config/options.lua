@@ -114,6 +114,12 @@ vim.keymap.set("n", "<leader>ccc", "<cmd>%w !pbcopy<CR>", { desc = "[c]opy [c]om
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff"
 
+vim.diagnostic.config({
+	float = {
+		border = "rounded",
+	},
+})
+
 -- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 
 -- local vim = vim

@@ -21,6 +21,13 @@ return {
 					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = false, -- requires hrsh7th/nvim-cmp
 				},
+				hover = {
+					enabled = true,
+					opts = {
+						border = "default",
+						position = { row = 2, col = 0 }
+					},
+				},
 			},
 		})
 	end,

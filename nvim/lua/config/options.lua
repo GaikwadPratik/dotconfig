@@ -120,6 +120,15 @@ vim.diagnostic.config({
 	},
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function(ctx)
+		local root = vim.fs.root(ctx.buf, { ".git", ".hg", ".svn", ".jj" })
+		if root then
+			vim.uv.chdir(root)
+		end
+	end,
+})
+
 -- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 
 -- local vim = vim

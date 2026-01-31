@@ -20,6 +20,13 @@ return {
 					winhighlight = "Normal:OilFloat,FloatBorder:OilFloatBorder",
 				},
 			},
+			confirmation = {
+				enable = true,
+				border = "rounded",
+				win_options = {
+					winhighlight = "Normal:OilFloat,FloatBorder:OilFloatBorder",
+				},
+			},
 		})
 	end,
 	---@module "oil"

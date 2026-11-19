@@ -1,39 +1,32 @@
 return {
-	"mason-org/mason.nvim",
+	"mason-org/mason-lspconfig.nvim",
 	dependencies = {
-		"mason-org/mason-lspconfig.nvim",
-	},
-	config = function()
-		-- import mason
-		local mason = require("mason")
-
-		-- import mason-lspconfig
-		local masonLspConfig = require("mason-lspconfig")
-
-		mason.setup({
-			ui = {
-				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
+		{
+			"mason-org/mason.nvim",
+			opts = {
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
 				},
 			},
-		})
+		},
+		"neovim/nvim-lspconfig",
+	},
+	opts = {
+		--list of server for Mason to install
+		ensure_installed = {
+			"rust_analyzer",
+			"gopls",
+			"lua_ls",
+			"ruff",
+			"basedpyright",
+			"bashls",
+			"dockerls",
+		},
 
-		masonLspConfig.setup({
-			--list of server for Mason to install
-			ensure_installed = {
-				"rust_analyzer",
-				"gopls",
-				"lua_ls",
-				"ruff",
-				"basedpyright",
-				"bashls",
-				"dockerls",
-			},
-
-			-- auto-installed configured servers (with lspconfig)
-			automatic_installation = true,
-		})
-	end,
+		automatic_enable = true,
+	},
 }

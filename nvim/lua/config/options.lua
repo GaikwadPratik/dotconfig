@@ -4,6 +4,7 @@ vim.opt.background = "dark"
 
 -- Detect all Dockerfiles with extensions
 vim.filetype.add({
+	extension = { gotmpl = "gotmpl" },
 	pattern = { ["Dockerfile*"] = "dockerfile" },
 })
 

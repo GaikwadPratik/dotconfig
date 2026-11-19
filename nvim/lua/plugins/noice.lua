@@ -25,10 +25,13 @@ return {
 					enabled = true,
 					opts = {
 						border = "default",
-						position = { row = 2, col = 0 }
+						position = { row = 2, col = 0 },
 					},
 				},
 			},
+			-- views = {
+			-- 	notify = { backend = "mini", view = "mini" },
+			-- },
 		})
 	end,
 }

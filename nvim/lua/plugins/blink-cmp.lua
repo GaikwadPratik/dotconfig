@@ -2,7 +2,7 @@ return {
 
 	"saghen/blink.cmp",
 	-- optional: provides snippets for the snippet source
-	dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
+	dependencies = { "rafamadriz/friendly-snippets" },
 
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -18,20 +18,20 @@ return {
 
 		completion = {
 			documentation = { auto_show = true },
-			selection = { preselect = true, auto_insert = true },
+			list = { selection = { preselect = true, auto_insert = true } },
 			ghost_text = { enabled = true },
 		},
 
 		signature = { enabled = true },
 
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
 			providers = {
-				copilot = {
-					name = "copilot",
-					module = "blink-copilot",
-					score_offset = -1000,
-					async = true,
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					-- Make lazydev completions top priority
+					score_offset = 100,
 				},
 			},
 		},
@@ -73,7 +73,7 @@ return {
 		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
 		--
 		-- See the fuzzy documentation for more information
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+		fuzzy = { implementation = "prefer_rust" },
 	},
 	opts_extend = { "sources.default" },
 }

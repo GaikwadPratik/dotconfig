@@ -3,3 +3,5 @@ nvim/lazy-lock.json
 tmux/plugins
 github-copilot
 cagent/
+anthropic/
+opencode/

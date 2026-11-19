@@ -48,11 +48,11 @@ local function enable_treesitter(buf, lang)
 	vim.treesitter.start(buf, lang)
 
 	vim.keymap.set({ "n", "x" }, "<CR>", function()
-		vim.treesitter.select("parent", vim.v.count1)
+		require("vim.treesitter._select").select_parent(vim.v.count1)
 	end, { buffer = buf, desc = "Select or expand syntax node" })
 
 	vim.keymap.set("x", "<BS>", function()
-		vim.treesitter.select("child", vim.v.count1)
+		require("vim.treesitter._select").select_child(vim.v.count1)
 	end, { buffer = buf, desc = "Shrink syntax selection" })
 
 	return true
@@ -115,7 +115,7 @@ return {
 
 			task:await(vim.schedule_wrap(function(err)
 				if not err then
-					ensure_installed(ev.buf, lang)
+					enable_treesitter(ev.buf, lang)
 				end
 			end))
 		end
@@ -126,3 +126,4 @@ return {
 		})
 	end,
 }
+
